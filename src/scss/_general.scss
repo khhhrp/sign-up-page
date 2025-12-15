@@ -1,0 +1,20 @@
+@use "./variables" as v;
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: "Space Grotesk", sans-serif;
+  background-color: v.$dark;
+  // background-image: url("../img/background.png");
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  // background-position: top;
+  color: v.$white;
+  line-height: 1.5;
+}
+
+.container {
+  padding-inline: 2rem;
+}

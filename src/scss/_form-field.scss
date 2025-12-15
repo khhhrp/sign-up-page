@@ -1,0 +1,138 @@
+@use "./variables" as v;
+
+@mixin transition($props) {
+  transition-property: $props;
+  transition-duration: v.$transition-duration;
+  transition-timing-function: v.$transition-timing-function;
+}
+
+.form-field {
+  $border-radius: 0.6rem;
+  $root: &;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.8rem;
+  width: 100%;
+
+  @media (hover: hover) {
+    &:hover {
+      #{$root} {
+        &__label {
+          color: v.$accent-color;
+        }
+
+        &__input {
+          outline-color: v.$accent-color;
+        }
+      }
+    }
+  }
+
+  &:focus-within {
+    #{$root} {
+      &__label {
+        color: v.$accent-color;
+      }
+    }
+  }
+
+  &:has(#{$root}__input:disabled) {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
+  &:has(#{$root}__btn) {
+    #{$root} {
+      &__input {
+        padding-right: 4.8rem;
+      }
+    }
+  }
+
+  &__label {
+    @include transition(color);
+    font-size: 1.6rem;
+  }
+
+  &__inner {
+    position: relative;
+  }
+
+  &__input {
+    @include transition(outline);
+    width: 100%;
+    background-color: rgba(v.$white, 0.08);
+    border: 0.1rem solid rgba(v.$white, 0.06);
+    outline-style: solid;
+    outline-width: 0.1rem;
+    outline-offset: 0.2rem;
+    outline-color: transparent;
+    border-radius: $border-radius;
+    padding-block: 1.2rem;
+    padding-left: 4.8rem;
+    padding-right: 1.6rem;
+    color: v.$white;
+
+    &:focus {
+      outline-color: v.$accent-color;
+    }
+
+    &::placeholder {
+      font-family: inherit;
+      font-size: 1.4rem;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    width: 2rem;
+    aspect-ratio: 1;
+    left: 1.6rem;
+    top: 50%;
+    translate: 0 -50%;
+  }
+
+  &__btn {
+    @include transition((background-color, color));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    translate: 0 -50%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    padding: 0;
+    color: v.$white;
+    width: 4.4rem;
+    height: 100%;
+    border-top-right-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
+
+    @media (hover: hover) {
+      cursor: pointer;
+
+      &:hover {
+        background-color: v.$accent-color;
+        color: v.$black;
+      }
+    }
+
+    &:focus {
+      background-color: v.$accent-color;
+      color: v.$black;
+    }
+  }
+
+  &__btn-icon {
+    width: 2rem;
+    aspect-ratio: 1;
+  }
+
+  &__text {
+    color: v.$gray;
+    font-size: 1.4rem;
+  }
+}

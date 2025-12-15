@@ -3,10 +3,213 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="./src/img/favicon.ico" sizes="32x32" />
+    <link rel="icon" href="./src/img/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="./src/img/apple-touch-icon.png" />
     <link rel="stylesheet" href="./src/style.scss" />
-    <title>Document</title>
+    <title>Superlist</title>
   </head>
   <body>
+    <svg width="0" height="0" class="visually-hidden">
+      <symbol
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 20 20"
+        id="eye-off"
+      >
+        <path
+          opacity="0.12"
+          d="M7.5 10C7.5 11.3807 8.61929 12.5 10 12.5C10.6904 12.5 11.3154 12.2202 11.7678 11.7678L8.23223 8.23224C7.77982 8.68465 7.5 9.30965 7.5 10Z"
+          fill="black"
+        ></path>
+        <path
+          d="M8.95209 4.2436C9.29076 4.19353 9.64014 4.16667 9.99998 4.16667C14.2542 4.16667 17.0457 7.9207 17.9835 9.40569C18.0971 9.58542 18.1538 9.67528 18.1856 9.81389C18.2094 9.91799 18.2094 10.0822 18.1855 10.1863C18.1538 10.3249 18.0966 10.4154 17.9823 10.5963C17.7324 10.9918 17.3514 11.5476 16.8467 12.1504M5.60324 5.59586C3.80151 6.81808 2.57834 8.51615 2.01722 9.4044C1.9032 9.58489 1.8462 9.67514 1.81442 9.81373C1.79055 9.91783 1.79054 10.082 1.81439 10.1861C1.84616 10.3247 1.90291 10.4146 2.01641 10.5943C2.95425 12.0793 5.74581 15.8333 9.99998 15.8333C11.7153 15.8333 13.1929 15.223 14.407 14.3972M2.49998 2.5L17.5 17.5M8.23221 8.23223C7.7798 8.68464 7.49998 9.30964 7.49998 10C7.49998 11.3807 8.61927 12.5 9.99998 12.5C10.6903 12.5 11.3153 12.2202 11.7677 11.7678"
+          stroke="currentColor"
+          stroke-width="1.2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></path>
+      </symbol>
+      <symbol
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 20 20"
+        id="lock"
+      >
+        <path
+          d="M14.1666 8.33333V6.66667C14.1666 4.36548 12.3012 2.5 9.99998 2.5C7.69879 2.5 5.83331 4.36548 5.83331 6.66667V8.33333M9.99998 12.0833V13.75M7.33331 17.5H12.6666C14.0668 17.5 14.7668 17.5 15.3016 17.2275C15.772 16.9878 16.1545 16.6054 16.3942 16.135C16.6666 15.6002 16.6666 14.9001 16.6666 13.5V12.3333C16.6666 10.9332 16.6666 10.2331 16.3942 9.69836C16.1545 9.22795 15.772 8.8455 15.3016 8.60582C14.7668 8.33333 14.0668 8.33333 12.6666 8.33333H7.33331C5.93318 8.33333 5.23312 8.33333 4.69834 8.60582C4.22793 8.8455 3.84548 9.22795 3.6058 9.69836C3.33331 10.2331 3.33331 10.9332 3.33331 12.3333V13.5C3.33331 14.9001 3.33331 15.6002 3.6058 16.135C3.84548 16.6054 4.22793 16.9878 4.69834 17.2275C5.23312 17.5 5.93318 17.5 7.33331 17.5Z"
+          stroke="currentColor"
+          stroke-width="1.2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></path>
+      </symbol>
+      <symbol
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 32 32"
+        id="logo"
+      >
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M16 32C24.8366 32 32 24.8366 32 16C32 7.16344 24.8366 0 16 0C7.16344 0 0 7.16344 0 16C0 24.8366 7.16344 32 16 32ZM16 32C16 20 26.6667 16 32 16C20 16 16 5.33333 16 0C16 12 5.33333 16 0 16C12 16 16 26.6667 16 32Z"
+          fill="currentColor"
+        ></path>
+      </symbol>
+      <symbol
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 20 20"
+        id="mail"
+      >
+        <path
+          d="M1.66669 5.83334L8.47079 10.5962C9.02176 10.9819 9.29725 11.1747 9.59691 11.2494C9.8616 11.3154 10.1384 11.3154 10.4031 11.2494C10.7028 11.1747 10.9783 10.9819 11.5293 10.5962L18.3334 5.83334M5.66669 16.6667H14.3334C15.7335 16.6667 16.4335 16.6667 16.9683 16.3942C17.4387 16.1545 17.8212 15.7721 18.0609 15.3017C18.3334 14.7669 18.3334 14.0668 18.3334 12.6667V7.33334C18.3334 5.93321 18.3334 5.23315 18.0609 4.69837C17.8212 4.22796 17.4387 3.84551 16.9683 3.60583C16.4335 3.33334 15.7335 3.33334 14.3334 3.33334H5.66669C4.26656 3.33334 3.56649 3.33334 3.03171 3.60583C2.56131 3.84551 2.17885 4.22796 1.93917 4.69837C1.66669 5.23315 1.66669 5.93321 1.66669 7.33334V12.6667C1.66669 14.0668 1.66669 14.7669 1.93917 15.3017C2.17885 15.7721 2.56131 16.1545 3.03171 16.3942C3.56649 16.6667 4.26656 16.6667 5.66669 16.6667Z"
+          stroke="currentColor"
+          stroke-width="1.2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></path>
+      </symbol>
+      <symbol
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 20 20"
+        id="user-circle"
+      >
+        <path
+          d="M4.43027 16.1987C4.9372 15.0043 6.12079 14.1667 7.50002 14.1667H12.5C13.8793 14.1667 15.0628 15.0043 15.5698 16.1987M13.3334 7.91667C13.3334 9.75762 11.841 11.25 10 11.25C8.15907 11.25 6.66669 9.75762 6.66669 7.91667C6.66669 6.07572 8.15907 4.58334 10 4.58334C11.841 4.58334 13.3334 6.07572 13.3334 7.91667ZM18.3334 10C18.3334 14.6024 14.6024 18.3333 10 18.3333C5.39765 18.3333 1.66669 14.6024 1.66669 10C1.66669 5.39763 5.39765 1.66667 10 1.66667C14.6024 1.66667 18.3334 5.39763 18.3334 10Z"
+          stroke="currentColor"
+          stroke-width="1.2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></path>
+      </symbol>
+      <symbol
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 20 20"
+        id="user-left"
+      >
+        <path
+          d="M15.8334 17.5L13.3334 15M13.3334 15L15.8334 12.5M13.3334 15H18.3334M10 12.9167H6.25002C5.08705 12.9167 4.50557 12.9167 4.0324 13.0602C2.96707 13.3834 2.13339 14.217 1.81022 15.2824C1.66669 15.7555 1.66669 16.337 1.66669 17.5M12.0834 6.25C12.0834 8.32107 10.4044 10 8.33335 10C6.26229 10 4.58335 8.32107 4.58335 6.25C4.58335 4.17893 6.26229 2.5 8.33335 2.5C10.4044 2.5 12.0834 4.17893 12.0834 6.25Z"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></path>
+      </symbol>
+      <symbol
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 20 20"
+        id="user-right"
+      >
+        <path
+          d="M15.8334 17.5L18.3334 15M18.3334 15L15.8334 12.5M18.3334 15H13.3334M10 12.9167H6.25002C5.08705 12.9167 4.50557 12.9167 4.0324 13.0602C2.96707 13.3834 2.13339 14.217 1.81022 15.2824C1.66669 15.7555 1.66669 16.337 1.66669 17.5M12.0834 6.25C12.0834 8.32107 10.4044 10 8.33335 10C6.26229 10 4.58335 8.32107 4.58335 6.25C4.58335 4.17893 6.26229 2.5 8.33335 2.5C10.4044 2.5 12.0834 4.17893 12.0834 6.25Z"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></path>
+      </symbol>
+    </svg>
+    <div class="container">
+      <form class="main-form">
+        <div class="main-form__inner">
+          <label class="form-field">
+            <span class="form-field__label">First Name</span>
+            <div class="form-field__inner">
+              <input
+                type="text"
+                placeholder="First Name"
+                class="form-field__input"
+                name="firstName"
+              />
+              <svg class="form-field__icon">
+                <use href="#user-left"></use>
+              </svg>
+            </div>
+          </label>
+          <label class="form-field">
+            <span class="form-field__label">Last Name</span>
+            <div class="form-field__inner">
+              <input
+                type="text"
+                placeholder="Last Name"
+                class="form-field__input"
+                name="lastName"
+              />
+              <svg class="form-field__icon">
+                <use href="#user-right"></use>
+              </svg>
+            </div>
+          </label>
+        </div>
+        <label class="form-field">
+          <span class="form-field__label">Username</span>
+          <div class="form-field__inner">
+            <input
+              type="text"
+              placeholder="Username"
+              class="form-field__input"
+              name="username"
+            />
+            <svg class="form-field__icon">
+              <use href="#user-circle"></use>
+            </svg>
+          </div>
+        </label>
+        <label class="form-field">
+          <span class="form-field__label">Email</span>
+          <div class="form-field__inner">
+            <input
+              type="email"
+              placeholder="Email"
+              class="form-field__input"
+              name="email"
+            />
+            <svg class="form-field__icon">
+              <use href="#mail"></use>
+            </svg>
+          </div>
+        </label>
+        <label class="form-field">
+          <span class="form-field__label">Password</span>
+          <div class="form-field__inner">
+            <input
+              type="password"
+              placeholder="Password"
+              class="form-field__input"
+              name="password"
+              minlength="8"
+              required
+            />
+            <svg class="form-field__icon">
+              <use href="#lock"></use>
+            </svg>
+            <button type="button" class="form-field__btn">
+              <svg class="form-field__btn-icon">
+                <use href="#eye-off"></use>
+              </svg>
+            </button>
+          </div>
+          <p class="form-field__text">Minimum length is 8 characters.</p>
+        </label>
+        <button type="submit" class="main-form__btn">Sign Up</button>
+        <p class="main-form__text">
+          By creating an account, you agree to the 
+          <a href="#!" class="main-form__link">Terms of Service</a>. We'll
+          occasionally send you account-related emails.
+        </p>
+      </form>
+    </div>
     <script type="module" src="./src/js/main.js" defer></script>
   </body>
 </html>
