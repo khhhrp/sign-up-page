@@ -58,12 +58,6 @@ body {
   position: absolute;
   background-color: rgba(v.$accent-color, 0.3);
   filter: blur(8.4rem);
-  translate: 0 -50%;
-  opacity: 0;
-  animation-name: translate-visible;
-  animation-duration: 1s;
-  animation-timing-function: ease;
-  animation-fill-mode: forwards;
 
   @media (width >= 1024px) {
     filter: blur(15rem);
