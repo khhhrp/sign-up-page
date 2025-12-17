@@ -11,3 +11,15 @@
     translate: 0%;
   }
 }
+
+@keyframes bounce {
+  50% {
+    translate: 0 0.5rem;
+  }
+}
+
+@keyframes scale {
+  50% {
+    scale: 1;
+  }
+}
