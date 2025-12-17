@@ -213,7 +213,7 @@
         ></path>
       </symbol>
     </svg>
-    <div class="overlay visually-hidden">
+    <div class="overlay">
       <div class="modal">
         <div class="modal__head">
           <h3 class="modal__title">Successful registration!</h3>
@@ -224,19 +224,19 @@
         <div class="modal__info">
           <p class="modal__text">
             First Name:
-            <span></span>
+            <span id="firstNameInfo"></span>
           </p>
           <p class="modal__text">
             Last Name:
-            <span></span>
+            <span id="lastNameInfo"></span>
           </p>
           <p class="modal__text">
             Username:
-            <span></span>
+            <span id="usernameInfo"></span>
           </p>
           <p class="modal__text">
             Email:
-            <span></span>
+            <span id="emailInfo"></span>
           </p>
         </div>
         <button type="button" class="modal__btn">Okey!</button>
@@ -302,8 +302,8 @@
                   placeholder="First Name"
                   class="form-field__input"
                   name="firstName"
-                  required
                   minlength="2"
+                  required
                 />
                 <svg class="form-field__icon">
                   <use href="#user-left"></use>
@@ -318,8 +318,8 @@
                   placeholder="Last Name"
                   class="form-field__input"
                   name="lastName"
-                  required
                   minlength="2"
+                  required
                 />
                 <svg class="form-field__icon">
                   <use href="#user-right"></use>
@@ -335,8 +335,8 @@
                 placeholder="Username"
                 class="form-field__input"
                 name="username"
-                required
                 minlength="5"
+                required
               />
               <svg class="form-field__icon">
                 <use href="#user-circle"></use>
@@ -375,7 +375,7 @@
               </svg>
               <button type="button" class="form-field__btn">
                 <svg class="form-field__btn-icon">
-                  <use href="#eye-off"></use>
+                  <use id="passwordIcon" href="#eye-off"></use>
                 </svg>
               </button>
             </span>

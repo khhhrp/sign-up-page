@@ -1,14 +1,7 @@
-@keyframes top-translate {
+@keyframes translate-visible {
   100% {
     opacity: 1;
     translate: 0% 0%;
-  }
-}
-
-@keyframes right-translate {
-  100% {
-    opacity: 1;
-    translate: 0%;
   }
 }
 

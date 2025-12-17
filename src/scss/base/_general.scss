@@ -60,7 +60,7 @@ body {
   filter: blur(8.4rem);
   translate: 0 -50%;
   opacity: 0;
-  animation-name: top-translate;
+  animation-name: translate-visible;
   animation-duration: 1s;
   animation-timing-function: ease;
   animation-fill-mode: forwards;
