@@ -214,111 +214,155 @@
       </symbol>
     </svg>
     <div class="shadow-block"></div>
-    <div class="container">
-      <header class="header">
-        <a href="#!" class="logo">
-          <svg class="logo__icon">
-            <use href="#logo"></use>
-          </svg>
-          <span class="logo__text">Superlist</span>
-        </a>
-        <h1 class="header__title">Start your 30-day free trial</h1>
-        <p class="header__text">
-          <svg class="header__text-icon">
-            <use href="#check"></use>
-          </svg>
-          No credit card required
-        </p>
-      </header>
-      <form class="main-form">
-        <div class="main-form__inner">
+    <div class="wrapper">
+      <div class="container">
+        <header class="header">
+          <a href="#!" class="logo">
+            <svg class="logo__icon">
+              <use href="#logo"></use>
+            </svg>
+            <span class="logo__text">Superlist</span>
+          </a>
+          <h1 class="header__title">Start your 30-day free trial</h1>
+          <p class="header__text">
+            <svg class="header__text-icon">
+              <use href="#check"></use>
+            </svg>
+            No credit card required
+          </p>
+          <div class="header__cards">
+            <article class="card">
+              <svg class="card__icon">
+                <use href="#users"></use>
+              </svg>
+              <h2 class="card__title">Invite unlimited colleagues</h2>
+              <p class="card__text">
+                Integrate with guaranteed developer-friendly APIs or openly to
+                choose a build-ready or low-code solution.
+              </p>
+            </article>
+            <article class="card">
+              <svg class="card__icon">
+                <use href="#check-verified"></use>
+              </svg>
+              <h2 class="card__title">Ensure compliance</h2>
+              <p class="card__text">
+                Receive detailed insights on all your numbers in real-time, see
+                where visitors are coming from.
+              </p>
+            </article>
+            <article class="card">
+              <svg class="card__icon">
+                <use href="#shield"></use>
+              </svg>
+              <h2 class="card__title">Built-in security</h2>
+              <p class="card__text">
+                Keep your team members and customers in the loop by sharing your
+                dashboard public.
+              </p>
+            </article>
+          </div>
+        </header>
+        <form class="main-form">
+          <div class="main-form__inner">
+            <label class="form-field">
+              <span class="form-field__label">First Name</span>
+              <span class="form-field__inner">
+                <input
+                  type="text"
+                  placeholder="First Name"
+                  class="form-field__input"
+                  name="firstName"
+                  required
+                  minlength="2"
+                />
+                <svg class="form-field__icon">
+                  <use href="#user-left"></use>
+                </svg>
+              </span>
+            </label>
+            <label class="form-field">
+              <span class="form-field__label">Last Name</span>
+              <span class="form-field__inner">
+                <input
+                  type="text"
+                  placeholder="Last Name"
+                  class="form-field__input"
+                  name="lastName"
+                  required
+                  minlength="2"
+                />
+                <svg class="form-field__icon">
+                  <use href="#user-right"></use>
+                </svg>
+              </span>
+            </label>
+          </div>
           <label class="form-field">
-            <span class="form-field__label">First Name</span>
-            <div class="form-field__inner">
+            <span class="form-field__label">Username</span>
+            <span class="form-field__inner">
               <input
                 type="text"
-                placeholder="First Name"
+                placeholder="Username"
                 class="form-field__input"
-                name="firstName"
+                name="username"
+                required
+                minlength="5"
               />
               <svg class="form-field__icon">
-                <use href="#user-left"></use>
+                <use href="#user-circle"></use>
               </svg>
-            </div>
+            </span>
           </label>
           <label class="form-field">
-            <span class="form-field__label">Last Name</span>
-            <div class="form-field__inner">
+            <span class="form-field__label">Email</span>
+            <span class="form-field__inner">
               <input
-                type="text"
-                placeholder="Last Name"
+                type="email"
+                placeholder="Email"
                 class="form-field__input"
-                name="lastName"
+                name="email"
+                minlength="5"
+                required
               />
               <svg class="form-field__icon">
-                <use href="#user-right"></use>
+                <use href="#mail"></use>
               </svg>
-            </div>
+            </span>
           </label>
-        </div>
-        <label class="form-field">
-          <span class="form-field__label">Username</span>
-          <div class="form-field__inner">
-            <input
-              type="text"
-              placeholder="Username"
-              class="form-field__input"
-              name="username"
-            />
-            <svg class="form-field__icon">
-              <use href="#user-circle"></use>
-            </svg>
-          </div>
-        </label>
-        <label class="form-field">
-          <span class="form-field__label">Email</span>
-          <div class="form-field__inner">
-            <input
-              type="email"
-              placeholder="Email"
-              class="form-field__input"
-              name="email"
-            />
-            <svg class="form-field__icon">
-              <use href="#mail"></use>
-            </svg>
-          </div>
-        </label>
-        <label class="form-field">
-          <span class="form-field__label">Password</span>
-          <div class="form-field__inner">
-            <input
-              type="password"
-              placeholder="Password"
-              class="form-field__input"
-              name="password"
-              minlength="8"
-              required
-            />
-            <svg class="form-field__icon">
-              <use href="#lock"></use>
-            </svg>
-            <button type="button" class="form-field__btn">
-              <svg class="form-field__btn-icon">
-                <use href="#eye-off"></use>
+          <label class="form-field">
+            <span class="form-field__label">Password</span>
+            <span class="form-field__inner">
+              <input
+                type="password"
+                placeholder="Password"
+                class="form-field__input"
+                name="password"
+                minlength="8"
+                required
+              />
+              <svg class="form-field__icon">
+                <use href="#lock"></use>
               </svg>
-            </button>
-          </div>
-          <p class="form-field__text">Minimum length is 8 characters.</p>
-        </label>
-        <button type="submit" class="main-form__btn">Sign Up</button>
-        <p class="main-form__text">
-          By creating an account, you agree to the 
-          <a href="#!" class="main-form__link">Terms of Service</a>. We'll
-          occasionally send you account-related emails.
-        </p>
-      </form>
+              <button type="button" class="form-field__btn">
+                <svg class="form-field__btn-icon">
+                  <use href="#eye-off"></use>
+                </svg>
+              </button>
+            </span>
+            <span class="form-field__text"
+              >Minimum length is 8 characters.</span
+            >
+          </label>
+          <button type="submit" class="main-form__btn">Sign Up</button>
+          <p class="main-form__text">
+            By creating an account, you agree to the 
+            <a href="#!" class="main-form__link">Terms of Service</a>. We'll
+            occasionally send you account-related emails.
+          </p>
+        </form>
+      </div>
     </div>
-    <script type="module" src="./src/js/main.js" defer></script>
+    <script type="module" src="./src/js/main.js"></script>
   </body>
 </html>

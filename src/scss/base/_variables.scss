@@ -1,0 +1,13 @@
+$black: #000;
+$white: #fff;
+$dark: #0e0f11;
+$gray: #8996a9;
+
+$yellow--400: #ecf15e;
+$yellow--700: #d6dd13;
+
+$accent-color: $yellow--400;
+$yellow-gradient: linear-gradient(to bottom, $yellow--400, $yellow--700);
+
+$transition-timing-function: ease;
+$transition-duration: 200ms;

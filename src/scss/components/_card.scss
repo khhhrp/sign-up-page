@@ -1,0 +1,25 @@
+@use "../base/variables" as v;
+@use "../utils/mixins" as m;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.2rem;
+
+  &__icon {
+    width: 3.2rem;
+    aspect-ratio: 1;
+    color: v.$accent-color;
+    flex-shrink: 0;
+  }
+
+  &__title {
+    font-size: 1.6rem;
+    font-weight: 500;
+  }
+
+  &__text {
+    color: v.$gray;
+    font-size: 1.4rem;
+  }
+}

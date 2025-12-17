@@ -19,6 +19,10 @@ body {
   line-height: 1.5;
 }
 
+.wrapper {
+  overflow: hidden;
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -26,6 +30,21 @@ body {
   padding-top: 10rem;
   padding-bottom: 5rem;
   padding-inline: 2rem;
+
+  @media (width >= 1024px) {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    column-gap: 5.2rem;
+    padding-inline: 5.6rem;
+    max-width: 130rem;
+    width: 100%;
+    margin-inline: auto;
+  }
+
+  @media (width >= 1440px) {
+    column-gap: 13rem;
+  }
 }
 
 .shadow-block {
@@ -39,4 +58,14 @@ body {
   position: absolute;
   background-color: rgba(v.$accent-color, 0.3);
   filter: blur(8.4rem);
+  translate: 0 -50%;
+  opacity: 0;
+  animation-name: top-translate;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+
+  @media (width >= 1024px) {
+    filter: blur(15rem);
+  }
 }

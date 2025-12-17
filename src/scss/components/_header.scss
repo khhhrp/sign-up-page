@@ -1,0 +1,61 @@
+@use "../base/variables" as v;
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 1.2rem;
+  text-align: center;
+  translate: 0 -50%;
+  opacity: 0;
+  animation-name: top-translate;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+  animation-delay: 250ms;
+
+  @media (width >= 1024px) {
+    text-align: start;
+    align-items: flex-start;
+    row-gap: 1.6rem;
+  }
+
+  &__title {
+    font-size: 2.4rem;
+    font-weight: 500;
+
+    @media (width >= 1024px) {
+      font-size: 3.2rem;
+    }
+  }
+
+  &__text {
+    display: flex;
+    align-items: center;
+    column-gap: 0.8rem;
+    font-size: 1.4rem;
+    color: v.$gray;
+  }
+
+  &__title,
+  &__text {
+    text-wrap-style: pretty;
+  }
+
+  &__text-icon {
+    flex-shrink: 0;
+    width: 1.6rem;
+    aspect-ratio: 1;
+  }
+
+  &__cards {
+    display: none;
+
+    @media (width >= 1024px) {
+      padding-top: 3.2rem;
+      display: flex;
+      flex-direction: column;
+      row-gap: 3.2rem;
+    }
+  }
+}

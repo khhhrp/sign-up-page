@@ -1,9 +1,11 @@
-@use "./variables" as v;
-@use "./helper" as m;
+@use "../base/variables" as v;
+@use "../utils/mixins" as m;
+@use "../utils/placeholders";
 
 .logo {
   $root: &;
-  @include m.transition(color);
+  @include m.transition((color, outline-color));
+  @extend %standard-outline;
   display: flex;
   align-items: center;
   column-gap: 0.8rem;
@@ -11,6 +13,7 @@
   font-size: 2rem;
   font-weight: 500;
   padding: 0.5rem;
+  border-radius: 0.6rem;
 
   @media (hover: hover) {
     &:hover {
@@ -22,6 +25,10 @@
         }
       }
     }
+  }
+
+  &:focus-visible {
+    outline-color: v.$accent-color;
   }
 
   &__icon {

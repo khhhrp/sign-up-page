@@ -1,13 +1,17 @@
 //base
-@use "./scss/custom-reset";
-@use "./scss/variables";
-@use "./scss/general";
+@use "./scss/base/custom-reset";
+@use "./scss/base/variables";
+@use "./scss/base/general";
+@use "./scss/base/animations";
 
 //components
-@use "./scss/header";
-@use "./scss/logo";
-@use "./scss/main-form";
-@use "./scss/form-field";
+@use "./scss/components/header";
+@use "./scss/components/logo";
+@use "./scss/components/card";
+@use "./scss/components/main-form";
+@use "./scss/components/form-field";
 
 //utils
-@use "./scss/helper";
+@use "./scss/utils/helper";
+@use "./scss/utils/mixins";
+@use "./scss/utils/placeholders";
