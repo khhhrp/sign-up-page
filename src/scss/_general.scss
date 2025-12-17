@@ -5,16 +5,38 @@ html {
 }
 
 body {
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
   font-family: "Space Grotesk", sans-serif;
   background-color: v.$dark;
-  // background-image: url("../img/background.png");
-  // background-repeat: no-repeat;
-  // background-size: cover;
-  // background-position: top;
+  background-image: url("../img/background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
   color: v.$white;
   line-height: 1.5;
 }
 
 .container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 4.8rem;
+  padding-top: 10rem;
+  padding-bottom: 5rem;
   padding-inline: 2rem;
+}
+
+.shadow-block {
+  position: absolute;
+  top: -10rem;
+  left: 0;
+  right: 0;
+  display: block;
+  height: 20rem;
+  border-radius: 50%;
+  position: absolute;
+  background-color: rgba(v.$accent-color, 0.3);
+  filter: blur(8.4rem);
 }

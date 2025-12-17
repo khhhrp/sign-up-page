@@ -1,10 +1,5 @@
 @use "./variables" as v;
-
-@mixin transition($props) {
-  transition-property: $props;
-  transition-duration: v.$transition-duration;
-  transition-timing-function: v.$transition-timing-function;
-}
+@use "./helper" as m;
 
 .form-field {
   $border-radius: 0.6rem;
@@ -50,7 +45,7 @@
   }
 
   &__label {
-    @include transition(color);
+    @include m.transition(color);
     font-size: 1.6rem;
   }
 
@@ -59,8 +54,9 @@
   }
 
   &__input {
-    @include transition(outline);
+    @include m.transition(outline);
     width: 100%;
+    font-size: 1.4rem;
     background-color: rgba(v.$white, 0.08);
     border: 0.1rem solid rgba(v.$white, 0.06);
     outline-style: solid;
@@ -93,7 +89,7 @@
   }
 
   &__btn {
-    @include transition((background-color, color));
+    @include m.transition((background-color, color));
     display: flex;
     align-items: center;
     justify-content: center;
