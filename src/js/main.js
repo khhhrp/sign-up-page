@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
   const overlay = document.querySelector(".overlay");
   const mainForm = document.querySelector(".main-form");
-  const firstName = document.querySelector("#firstNameInfo");
-  const lastName = document.querySelector("#lastNameInfo");
-  const username = document.querySelector("#usernameInfo");
-  const email = document.querySelector("#emailInfo");
+  const firstNameInfo = document.querySelector("#firstNameInfo");
+  const lastNameInfo = document.querySelector("#lastNameInfo");
+  const usernameInfo = document.querySelector("#usernameInfo");
+  const emailInfo = document.querySelector("#emailInfo");
   const showPassBtn = document.querySelector(".form-field__btn");
   const modalBtn = document.querySelector(".modal__btn");
 
@@ -15,6 +15,30 @@ document.addEventListener("DOMContentLoaded", () => {
     email: "",
   };
 
+  mainForm.addEventListener("beforeinput", (e) => {
+    if (e.target.tagName !== "INPUT") return;
+
+    if (e.data && /\s/.test(e.data)) {
+      e.preventDefault();
+    }
+  });
+
+  mainForm.querySelectorAll("input").forEach((input) => {
+    input.addEventListener("invalid", (e) => {
+      e.target.style.outlineColor = "red";
+    });
+
+    input.addEventListener("input", (e) => {
+      if (e.target.value === "") {
+        e.target.style.outlineColor = "";
+      } else if (e.target.checkValidity()) {
+        e.target.style.outlineColor = "green";
+      } else {
+        e.target.style.outlineColor = "red";
+      }
+    });
+  });
+
   function updateUser() {
     user.firstName = mainForm.elements.firstName.value.trim();
     user.lastName = mainForm.elements.lastName.value.trim();
@@ -23,10 +47,10 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function showUser() {
-    firstName.textContent = user.firstName;
-    lastName.textContent = user.lastName;
-    username.textContent = user.username;
-    email.textContent = user.email;
+    firstNameInfo.textContent = user.firstName;
+    lastNameInfo.textContent = user.lastName;
+    usernameInfo.textContent = user.username;
+    emailInfo.textContent = user.email;
   }
 
   function changeInputType() {
@@ -37,17 +61,19 @@ document.addEventListener("DOMContentLoaded", () => {
       ? passwordIcon.setAttribute("href", "#eye-on")
       : passwordIcon.setAttribute("href", "#eye-off");
 
-    input.type === "password"
-      ? (input.type = "text")
-      : (input.type = "password");
+    input.type = input.type === "password" ? "text" : "password";
   }
 
-  showPassBtn.addEventListener("click", () => {
-    changeInputType();
-  });
+  showPassBtn.addEventListener("click", changeInputType);
 
   mainForm.addEventListener("submit", (event) => {
     event.preventDefault();
+
+    if (!mainForm.checkValidity()) {
+      mainForm.reportValidity();
+      return;
+    }
+
     updateUser();
     overlay.classList.add("overlay--active");
     showUser();
@@ -56,5 +82,9 @@ document.addEventListener("DOMContentLoaded", () => {
   modalBtn.addEventListener("click", () => {
     mainForm.reset();
     overlay.classList.remove("overlay--active");
+
+    mainForm.querySelectorAll("input").forEach((input) => {
+      input.style.outlineColor = "";
+    });
   });
 });
