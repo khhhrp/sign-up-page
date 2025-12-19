@@ -82,6 +82,7 @@
     &:-webkit-autofill:active {
       transition: background-color 99999s ease-in-out 0s;
       box-shadow: 0 0 0 1000px #000000 inset !important;
+      background-clip: content-box !important;
       -webkit-text-fill-color: v.$white !important;
       -webkit-box-shadow: 0 0 0 1000px #000000 inset !important;
     }
